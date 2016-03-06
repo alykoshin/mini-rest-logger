@@ -1,12 +1,14 @@
 {
   "name": "mini-rest-logger",
   "version": "0.0.0",
-  "description": "Winston-based logger for mini-rest project",
+  "description": "Winston-based logger for mini-rest project with console, file, winlog (win32 only) transports",
   "main": "./index.js",
   "engines": {
     "node": ">=0.10"
   },
   "scripts": {
+    "_install": "node node_modules/platform-dependent-modules/cli.js",
+    "install": "npm run _install",
     "nsp": "nsp check",
     "_deps-check": "npm-check-updates --error-level 2",
     "_deps-update": "echo '* Updating packages versions... '; npm-check-updates -u --upgradeAll --error-level 1 && npm install",
@@ -15,9 +17,9 @@
     "lint": "eslint -f unix .",
     "inspect": "jsinspect",
     "pretest": "npm run lint && npm run inspect && npm run nsp && npm run _deps-check",
-    "_test": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*",
+    "__test": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*",
     "test": "npm run _test",
-    "__test": "echo \"Warning: no test specified\" && exit 0",
+    "_test": "echo \"Warning: no test specified\" && exit 0",
     "___test": "echo \"Error: no test specified\" && exit 1",
     "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*",
     "_commit": "git commit -am \"commit by 'npm run commit'\"",
@@ -32,7 +34,7 @@
     "coverall": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "keywords": [
-      "logging,logger,winston,winlog,console,debug"
+    "logging,logger,winston,winlog,console,debug"
   ],
   "author": "Alexander <alykoshin@gmail.com>",
   "license": "MIT",
@@ -45,18 +47,17 @@
   },
   "homepage": "https://github.com/alykoshin/mini-rest-logger",
   "dependencies": {
-    "minimist": "^1.2.0"
+    "mkdirp": "^0.5.1",
+    "platform-dependent-modules": "0.0.3",
+    "require-dir-all": "^0.4.5",
+    "winston": "^2.2.0"
   },
-  "devDependencies": {
-    "chai": "^3.4.1",
-    "chai-things": "^0.2.0",
-    "coveralls": "^2.11.4",
-    "eslint": "^1.10.3",
-    "istanbul": "^0.4.1",
-    "jshint": "^2.8.0",
-    "jsinspect": "^0.7.2",
-    "mocha": "^2.3.4",
-    "mockery": "^1.4.0",
-    "sinon": "^1.17.2"
+  "devDependencies": {},
+  "config": {
+    "platformDependentModules": {
+      "win32": [
+        "winston-winlog2"
+      ]
+    }
   }
 }
