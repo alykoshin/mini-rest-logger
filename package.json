@@ -7,7 +7,7 @@
     "node": ">=0.10"
   },
   "scripts": {
-    "_postinstall": "node node_modules/platform-dependent-modules/cli.js",
+    "_postinstall": "platform-dependent-modules",
     "postinstall": "npm run _postinstall",
     "nsp": "nsp check",
     "_deps-check": "npm-check-updates --error-level 2",
@@ -48,7 +48,7 @@
   "homepage": "https://github.com/alykoshin/mini-rest-logger",
   "dependencies": {
     "mkdirp": "^0.5.1",
-    "platform-dependent-modules": "0.0.4",
+    "platform-dependent-modules": "0.0.5",
     "require-dir-all": "^0.4.5",
     "winston": "^2.2.0"
   },
