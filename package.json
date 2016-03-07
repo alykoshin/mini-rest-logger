@@ -48,7 +48,7 @@
   "homepage": "https://github.com/alykoshin/mini-rest-logger",
   "dependencies": {
     "mkdirp": "^0.5.1",
-    "platform-dependent-modules": "0.0.5",
+    "platform-dependent-modules": "0.0.6",
     "require-dir-all": "^0.4.5",
     "winston": "^2.2.0"
   },
