@@ -7,8 +7,8 @@
     "node": ">=0.10"
   },
   "scripts": {
-    "_install": "node node_modules/platform-dependent-modules/cli.js",
-    "install": "npm run _install",
+    "_postinstall": "node node_modules/platform-dependent-modules/cli.js",
+    "postinstall": "npm run _postinstall",
     "nsp": "nsp check",
     "_deps-check": "npm-check-updates --error-level 2",
     "_deps-update": "echo '* Updating packages versions... '; npm-check-updates -u --upgradeAll --error-level 1 && npm install",
