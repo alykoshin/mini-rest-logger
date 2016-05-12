@@ -47,7 +47,7 @@
   },
   "homepage": "https://github.com/alykoshin/mini-rest-logger",
   "dependencies": {
-    "mini-throttle": "0.0.3",
+    "mini-throttle": "0.0.4",
     "mkdirp": "^0.5.1",
     "module-parent": "0.0.2",
     "platform-dependent-modules": "0.0.13",
