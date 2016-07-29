@@ -58,7 +58,7 @@
   "config": {
     "platformDependentModules": {
       "win32": [
-        "winston-winlog2"
+        "winston-winlog3"
       ]
     }
   }
