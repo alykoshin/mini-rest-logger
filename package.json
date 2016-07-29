@@ -56,7 +56,7 @@
   },
   "devDependencies": {},
   "optionalDependencies": {
-    "winston-winlog3": "^1.0.2"
+    "winston-winlog3": "^1.0.3"
   },
   "config": {
     "platformDependentModules": {
