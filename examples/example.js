@@ -34,3 +34,22 @@ logger2.debug('debug');
 logger2.info('info');
 logger2.warn('warn');
 logger2.error('error');
+
+
+const meta = { level: 'info', message: 'meta_message', id: 1 };
+logger2.log(meta, 'log_message')
+
+const err1 = new Error('Error with stack trace');
+err1.level = 'warn';
+logger2.log(err1, 'error msg');
+
+const err2 = new Error('Error without stack trace');
+err2.level = 'warn';
+err2.hideStack = true;
+logger2.log(err2);
+
+const err3 = new Error('Error without stack trace and log msg');
+err3.level = 'warn';
+err3.hideStack = true;
+logger2.log(err3);
+
