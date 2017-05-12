@@ -9,6 +9,7 @@ logger1.debug('debug');
 logger1.info('info');
 logger1.warn('warn');
 logger1.error('error');
+logger1.force('force');
 
 var logger2 = require('../')('logger2', {
     "console_level": "silly",
