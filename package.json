@@ -1,6 +1,6 @@
 {
   "name": "mini-rest-logger",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "Winston-based logger for mini-rest project with console, file, winlog (win32 only) transports",
   "main": "./index.js",
   "engines": {
