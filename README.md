@@ -46,7 +46,7 @@ var logger2 = require('../')('logger2', {
     "winlog_source": "awl-client",
 
     "file_level": "debug",
-    "filename": "./log/app.log",
+    "filename": __dirname+"/log/app.log",
     "maxsize": 1000000,
     "maxFiles": 10,
  

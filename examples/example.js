@@ -24,7 +24,7 @@ var logger2 = require('../')('logger2', {
     ],
 
   "file_level": "debug",
-    "filename": "./log/app.log",
+    "filename": __dirname + "/log/app.log",
     "maxsize": 1000000,
     "maxFiles": 10,
     "instantiateLimit": 10,
