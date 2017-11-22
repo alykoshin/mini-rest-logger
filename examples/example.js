@@ -2,6 +2,10 @@
  * Created by alykoshin on 06.03.16.
  */
 
+console.log('process.pid:', process.pid);
+console.log('process.title:', process.title);
+
+/*
 var logger1 = require('../')({});
 
 logger1.silly('silly');
@@ -10,6 +14,7 @@ logger1.info('info');
 logger1.warn('warn');
 logger1.error('error');
 logger1.force('force');
+ */
 
 var logger2 = require('../')('logger2', {
 
@@ -33,10 +38,10 @@ var logger2 = require('../')('logger2', {
   ],
 
   // syslog transport
-  // https://www.npmjs.com/package/winston-syslog
-  syslog: {
+  // https://www.npmjs.com/package/winston-rsyslog
+  rsyslog: {
     host: 'localhost',
-    protocol: 'udp4',
+    protocol: 'T',
   },
 
   // options for all transports

@@ -55,6 +55,7 @@
     "platform-dependent-modules": "0.0.14",
     "require-dir-all": "^0.4.12",
     "winston": "^2.4.0",
+    "winston-rsyslog": "0.0.2",
     "winston-syslog": "^1.2.6"
   },
   "devDependencies": {},
