@@ -12,24 +12,36 @@ logger1.error('error');
 logger1.force('force');
 
 var logger2 = require('../')('logger2', {
-    "console_level": "silly",
 
-    "winlog_level": "info",
-    "winlog_source": "awl-client",
-    "description": [
-      "Configuration for throttling of application messages to EventLog:",
-      "- maxCalls     - max number of calls during observation interval",
-      "- interval     - observation interval",
-      "- warnInterval - interval to output info about the number of rejected messages"
-    ],
+  // console transport
+  'console_level': 'silly',
 
-  "file_level": "debug",
-    "filename": __dirname + "/log/app.log",
-    "maxsize": 1000000,
-    "maxFiles": 10,
-    "instantiateLimit": 10,
-  }
-);
+  // file transport
+  file_level: 'debug',
+  filename: __dirname + '/log/app.log',
+  maxsize: 1000000,
+  maxFiles: 10,
+
+  // winlog transport
+  winlog_level: 'info',
+  winlog_source: 'awl-client',
+  description: [
+    'Configuration for throttling of application messages to EventLog:',
+    '- maxCalls     - max number of calls during observation interval',
+    '- interval     - observation interval',
+    '- warnInterval - interval to output info about the number of rejected messages'
+  ],
+
+  // syslog transport
+  // https://www.npmjs.com/package/winston-syslog
+  syslog: {
+    host: 'localhost',
+    protocol: 'udp4',
+  },
+
+  // options for all transports
+  instantiateLimit: 10,
+});
 
 logger2.silly('silly');
 logger2.debug('debug');
