@@ -41,7 +41,8 @@ var logger2 = require('../')('logger2-categoryName', {
   // https://www.npmjs.com/package/winston-rsyslog
   rsyslog: {
     host: 'localhost',
-    protocol: 'T',
+    protocol: 'T',  // if winston-rsyslog is used as underlying package
+    //protocol: 'udp4', // if winston-syslog is used as underlying package
   },
 
   // options for all transports
