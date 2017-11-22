@@ -40,8 +40,9 @@ var logger2 = require('../')('logger2-categoryName', {
   // syslog transport
   // https://www.npmjs.com/package/winston-rsyslog
   rsyslog: {
-    host: '192.168.1.102',
-//    host: 'localhost',
+    //host: '192.168.1.102',
+    //host: 'localhost',
+    host: '127.0.0.1',
     protocol: 'T',  // if winston-rsyslog is used as underlying package
     //protocol: 'udp4', // if winston-syslog is used as underlying package
   },
@@ -50,44 +51,27 @@ var logger2 = require('../')('logger2-categoryName', {
   instantiateLimit: 10,
 });
 
-//logger2.silly('silly');
-//logger2.debug('debug');
-//logger2.info('info');
-//logger2.warn('warn');
-//logger2.error('error');
-//
-//
-//const meta = { level: 'info', message: 'meta_message', id: 1 };
-//logger2.log(meta, 'log_message')
-//
-//const err1 = new Error('Error with stack trace');
-//err1.level = 'warn';
-//logger2.log(err1, 'error msg');
-//
-//const err2 = new Error('Error without stack trace');
-//err2.level = 'warn';
-//err2.hideStack = true;
-//logger2.log(err2);
-//
-//const err3 = new Error('Error without stack trace and log msg');
-//err3.level = 'warn';
-//err3.hideStack = true;
-//logger2.log(err3);
+logger2.silly('silly');
+logger2.debug('debug');
+logger2.info('info');
+logger2.warn('warn');
+logger2.error('error');
 
-logger2.error('error1')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
-logger2.error('error2')
+
+const meta = { level: 'info', message: 'meta_message', id: 1 };
+logger2.log(meta, 'log_message')
+
+const err1 = new Error('Error with stack trace');
+err1.level = 'warn';
+logger2.log(err1, 'error msg');
+
+const err2 = new Error('Error without stack trace');
+err2.level = 'warn';
+err2.hideStack = true;
+logger2.log(err2);
+
+const err3 = new Error('Error without stack trace and log msg');
+err3.level = 'warn';
+err3.hideStack = true;
+logger2.log(err3);
 
