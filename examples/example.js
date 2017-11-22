@@ -16,7 +16,7 @@ logger1.error('error');
 logger1.force('force');
  */
 
-var logger2 = require('../')('logger2', {
+var logger2 = require('../')('logger2-categoryName', {
 
   // console transport
   'console_level': 'silly',
